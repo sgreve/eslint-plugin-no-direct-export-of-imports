@@ -1,0 +1,32 @@
+{
+  "name": "eslint-plugin-no-direct-export-of-imports",
+  "version": "0.0.1",
+  "description": "Plugin for disallowing direct export of imports",
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin"
+  ],
+  "author": "Sven Greve",
+  "main": "lib/index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "mocha tests --recursive"
+  },
+  "dependencies": {
+    "requireindex": "^1.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.16.0",
+    "eslint-plugin-eslint-plugin": "^4.2.0",
+    "eslint-plugin-node": "^11.1.0",
+    "mocha": "^9.2.2"
+  },
+  "engines": {
+    "node": "12.x || 14.x || >= 16"
+  },
+  "peerDependencies": {
+    "eslint": ">=6"
+  },
+  "license": "MIT"
+}
