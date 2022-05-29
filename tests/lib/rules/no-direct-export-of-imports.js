@@ -28,18 +28,41 @@ const ruleTester = new RuleTester();
 ruleTester.run("no-direct-export-of-imports", rule, {
   valid: [
     {
-        code: `import test from 'test'
-         export { test as test2 }
-        `,
+        code: 
+		`import somethingDefault from 'someImport'
+         export { somethingDefault as newNamed }`
+    },
+	{
+        code: 
+		`import { somethingNamed } from 'someImport'
+         export { somethingNamed as newNamed }`
+    },
+	{
+        code: 
+		`import { somethingDefault } from 'someImport'
+		 const otherVariable = somethingDefault
+         export { otherVariable }`
     },
   ],
 
   invalid: [
     {
       code: 
-      "import fs from 'fs/promises'\n" +
-      "export { fs }",
-      errors: [{ message: "Imports are not allowed to be exported directly", type: "ExportNamedDeclaration" }],
+      `import somethingDefault from 'someImport'
+       export { somethingDefault }`,
+      errors: [{ message: "Imports are not allowed to be exported directly: somethingDefault", type: "ExportNamedDeclaration" }],
     },
+	{
+		code: 
+		`import { somethingNamed } from 'someImport'
+		 export { somethingNamed }`,
+		errors: [{ message: "Imports are not allowed to be exported directly: somethingNamed", type: "ExportNamedDeclaration" }],
+	},
+	{
+		code: 
+		`import { somethingNamed } from 'someImport'
+		 export default somethingDefault`,
+		errors: [{ message: "Imports are not allowed to be exported directly: somethingDefault", type: "ExportDefaultDeclaration" }],
+	}
   ],
 });
