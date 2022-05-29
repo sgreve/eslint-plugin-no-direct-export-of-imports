@@ -1,4 +1,5 @@
 # eslint-plugin-no-direct-export-of-imports
+[![npm version](https://badge.fury.io/js/eslint-plugin-no-direct-export-of-imports.svg)](https://badge.fury.io/js/eslint-plugin-no-direct-export-of-imports)
 
 Plugin for disallowing direct export of imports
 

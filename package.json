@@ -1,12 +1,14 @@
 {
   "name": "eslint-plugin-no-direct-export-of-imports",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Plugin for disallowing direct export of imports",
   "keywords": [
     "eslint",
     "eslintplugin",
     "eslint-plugin"
   ],
+  "repository": "https://github.com/sgreve/eslint-plugin-no-direct-export-of-imports",
+  "homepage": "https://github.com/sgreve/eslint-plugin-no-direct-export-of-imports",
   "author": "Sven Greve",
   "main": "lib/index.js",
   "scripts": {
