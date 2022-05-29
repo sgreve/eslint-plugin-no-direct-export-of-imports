@@ -61,8 +61,8 @@ ruleTester.run("no-direct-export-of-imports", rule, {
 	{
 		code: 
 		`import { somethingNamed } from 'someImport'
-		 export default somethingDefault`,
-		errors: [{ message: "Imports are not allowed to be exported directly: somethingDefault", type: "ExportDefaultDeclaration" }],
+		 export default somethingNamed`,
+		errors: [{ message: "Imports are not allowed to be exported directly: somethingNamed", type: "ExportDefaultDeclaration" }],
 	}
   ],
 });
