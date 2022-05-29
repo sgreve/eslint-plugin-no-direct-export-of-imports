@@ -1,35 +1,47 @@
 # Disallow direct export of imports (no-direct-export-of-imports)
 
-Please describe the origin of the rule here.
+Prevent direct exporting of imports.
 
 ## Rule Details
+---
 
-This rule aims to...
-
-Examples of **incorrect** code for this rule:
-
-```js
-
-// fill me in
-
-```
-
-Examples of **correct** code for this rule:
+### Examples of **incorrect** code for this rule:
 
 ```js
 
-// fill me in
+import somethingDefault from 'someImport'
+export { somethingDefault }
 
 ```
 
-### Options
+```js
 
-If there are any options, describe them here. Otherwise, delete this section.
+import somethingDefault from 'someImport'
+export default omethingDefault
 
-## When Not To Use It
+```
 
-Give a short description of when it would be appropriate to turn off this rule.
+```js
 
-## Further Reading
+import { somethingNamed } from 'someImport'
+export { somethingNamed }
 
-If there are other links that describe the issue this rule addresses, please include them here in a bulleted list.
+```
+----
+
+### Examples of **correct** code for this rule:
+
+```js
+
+import somethingDefault from 'someImport'
+export { somethingDefault as newNamed }
+
+```
+
+```js
+
+import { somethingDefault } from 'someImport'
+const otherVariable = somethingDefault
+export { otherVariable }
+
+```
