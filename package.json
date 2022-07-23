@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-no-direct-export-of-imports",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Plugin for disallowing direct export of imports",
   "keywords": [
     "eslint",
@@ -16,7 +16,6 @@
     "test": "mocha tests --recursive"
   },
   "dependencies": {
-    "requireindex": "^1.2.0"
   },
   "devDependencies": {
     "eslint": "^8.16.0",
